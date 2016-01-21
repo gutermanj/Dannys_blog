@@ -6757,4 +6757,11 @@ button.close {
     display: none !important;
   }
 }
+
+#menu-toggle {
+  width: 150px;
+  font-size: 18px;
+}
+
+
 /*# sourceMappingURL=bootstrap.css.map */

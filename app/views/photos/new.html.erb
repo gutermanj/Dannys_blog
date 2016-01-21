@@ -57,42 +57,42 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong style="margin-right: 20px;"><%= current_user.first_name %></strong>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link btn btn-default' %> <span style="font-size: 20px;">|</span>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link btn btn-default'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                          <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">Menu</button>
                             <h3 style="float: right; font-size: 25px;">Danny's Memorial</h3>
                          <hr>
+                         <div class="col-lg-2"></div>
+                         <div class="col-lg-8">
+                      
+                           <span style="font-size: 25px;" id="thingy">Photos</span> 
+                            <hr style="border-color: #17A2FF;">
+                              </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
-                        <span style="font-size: 25px;" id="thingy">Home</span>
-                        <hr style="border-color: #17A2FF;">
-                        <% @posts.each do |f| %>
-                            <div class="post_wrapper">
-                                <h4 class="title"><%= link_to f.title, f, {:style=>'color:black; font-size: 25px;'} %></h4>
-                                <p class="date">Created on | <%= f.created_at.strftime("%B, %d, %Y") %></p><hr>
-                                <p class="post_body" style="-webkit-columns: 100% 1;
-   -moz-columns: 100% 1;
-        columns: 100% 1;"><%= f.body %></p>
-                                <p><%= link_to 'Destroy', f, :method => :delete, :confirm => "Are you sure?" %></p>
-                            </div>
-                            <hr style="border-color: black;">
-                        <% end %>
+                       <div class="page-header"><h1>Upload Photo</h1></div>
+
+    <%= form_for Photo.new do |f| %>
+  
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control', :html => { :multipart => true } %>
+  </div>
+
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %><!--Put all photo stuff in here-->
                         
-                        
-                        <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
+
                     </div>
                 </div>
             </div>
@@ -119,5 +119,3 @@
 </body>
 
 </html>
-
-

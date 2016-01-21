@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'contact/index'
 
   resources :posts
+
+  resources :photos, only: [:new, :create, :index, :destroy]
   get 'posts/index'
   
   get 'posts/new'

@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ .input_field {
+  width: 300px;
+}
