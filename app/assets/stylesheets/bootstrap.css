@@ -5,7 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: arial;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -1086,7 +1086,6 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
 }
 input,
 button,
@@ -4337,7 +4336,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: none;
     width: auto;
     margin-top: 0;
-    background-color: transparent;
+    background-color: #2E2E2E;
     border: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -5032,6 +5031,8 @@ a.thumbnail.active {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+  position: absolute;
+  z-index: 150;
 }
 .alert h4 {
   margin-top: 0;
@@ -6645,6 +6646,16 @@ button.close {
     display: table-cell !important;
   }
 }
+
+@media (min-width: 787px) and (max-width: 1200px) {
+  .post_wrapper {
+  }
+
+  .ifiphone {
+    margin-top: 20%;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-block {
     display: block !important;
@@ -6762,6 +6773,27 @@ button.close {
   width: 150px;
   font-size: 18px;
 }
+
+@media (max-width: 768px) {
+.post_wrapper {
+  margin-left: 5%;
+}
+
+.ifiphone {
+  margin-top: 40%;
+}
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 150;
+  display: none;
+}
+}
+
+
 
 
 /*# sourceMappingURL=bootstrap.css.map */

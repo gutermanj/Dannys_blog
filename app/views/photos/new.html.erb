@@ -48,9 +48,6 @@
                 <li>
                     <a href="/photos/about">About</a>
                 </li>
-                <li>
-                    <a href="/contact/index">Contact</a>
-                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -86,7 +83,7 @@
 
   <div class="form-group">
     <%= f.label :image %>
-    <%= f.file_field :image, class: 'form-control', :html => { :multipart => true } %>
+    <%= f.file_field :image, class: 'form-control', :html => { :multipart => true }, :required => "true" %>
   </div>
 
   <%= f.submit 'Upload', class: 'btn btn-primary' %>

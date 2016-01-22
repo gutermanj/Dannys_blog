@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #2E2E2E;">
 
     <div id="wrapper">
         <!-- Sidebar -->
@@ -46,60 +46,119 @@
                     <a href="/photos/index">Pictures</a>
                 </li>
                 <li>
+                    <a href="/photos/new">Upload Photo</a>
+                </li>
+                <li>
                     <a href="/photos/about">About</a>
                 </li>
                 <li>
-                    <a href="/contact/index">Contact</a>
-                </li>
+                     <% if user_signed_in? %>
+                         
+                          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'sidebar-brand toggled' %> <span style="font-size: 20px;"></span>
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'sidebar-brand toggled'  %>
+                           <span style="color: darkgray; margin-left: 8%;">Logged in as</span> <strong style="color: lightgray;"><%= current_user.first_name %></strong>
+                        <% else %>
+                          <%= link_to "Sign up", new_user_registration_path, :class => 'sidebar-brand toggled'  %>
+                          <%= link_to "Login", new_user_session_path, :class => 'sidebar-brand toggled'  %>
+
+                        <% end %>
+                    </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong style="margin-right: 20px;"><%= current_user.first_name %></strong>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link btn btn-default' %> <span style="font-size: 20px;">|</span>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link btn btn-default'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-            <div class="container-fluid">
+        <div id="page-content-wrapper" style="padding: 0px;">
+           
+
+
+            <div class="container-fluid" style="padding: 0px;">
                 <div class="row">
-                    <div class="col-lg-12">
-                         <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">Menu</button>
-                            <h3 style="float: right; font-size: 25px;">Danny's Memorial</h3>
-                         <hr>
+                    <div class="container-fluid">
+                        <div class="stuckthing"  style="position: fixed; z-index: 100; width: 100%; background-color: #AAAAAA; border-bottom-style: solid; border-width:1px; border-color: #464646; -webkit-box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);
+-moz-box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);
+box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);">
+                            <div class="col-sm-5" style="margin-left: 15%; margin-top: 1%;">
+                         <button type="button" class="btn btn-primary navbar-btn" id="menu-toggle"style="margin-left: 2%;">Menu</button>
+                     
+
+ </div>
+
+
+ <div class="col-sm-5">
+                        
+                        
+
+
+
+
+                           
+
+                           
+                      
+                            <h3 style=" font-size: 25px; text-align: right; padding-right: 36%;">Danny's Official Memorial</h3>
+                            <hr style="border-color: #17A2FF; width: 64%; margin-right: 50%;">
+                        </div>
                     </div>
+                         
+                          
+                     </div>
+                    </div>
+                    
                 </div>
-                <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
-                        <span style="font-size: 25px;" id="thingy">Home</span>
-                        <hr style="border-color: #17A2FF;">
+
+                <div class="row ifiphone" style="background-color: #2E2E2E;">
+                    <div class="col-lg-2">
+
+                        <div class="backpohotos" style="margin-top: 10%; position: fixed; z-index: 50; ">
+                        <img src="2ndpicture.jpg" height="200" width="40%" style="margin-left: 1%; -webkit-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+-moz-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);" ><br><br>
+                        <img src="imageedit_5_7338682968.jpg" height="200" width="40%" style="margin-left: 1%; -webkit-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+-moz-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);">
+
+                    </div>
+                    </div>
+                    <div class="col-sm-8" style="margin-top: 10%;">
+                        
                         <% @posts.each do |f| %>
-                            <div class="post_wrapper">
+                            <div class="post_wrapper" style="margin-top: .5%; padding-left: 15px; background-color: #FAFAFA; border-style: solid; border-color: darkgray; border-width: 1px; border-top-width: 1px;-webkit-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+-moz-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);">
                                 <h4 class="title"><%= link_to f.title, f, {:style=>'color:black; font-size: 25px;'} %></h4>
                                 <p class="date">Created on | <%= f.created_at.strftime("%B, %d, %Y") %></p><hr>
-                                <p class="post_body" style="-webkit-columns: 100% 1;
-   -moz-columns: 100% 1;
-        columns: 100% 1;"><%= f.body %></p>
+                                <p class="post_body" style="padding-left: 20px; padding-right: 20px;"><%= f.body %></p>
                                 <p><%= link_to 'Destroy', f, :method => :delete, :confirm => "Are you sure?" %></p>
                             </div>
-                            <hr style="border-color: black;">
+
                         <% end %>
-                        
+                         <br><br>
                         
                         <!--<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>-->
                     </div>
+
+                    <div class="col-lg-1">
+
+                        <div class="backpohotos" style="margin-top: 10%; position: fixed; z-index: 50;">
+                        <img src="3rdpicture.jpg" height="200" width="90%" style="margin-left: 1%; -webkit-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+-moz-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);" ><br><br>
+                        <img src="4thpicture.jpg" height="200" width="90%" style="margin-left: 1%; -webkit-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+-moz-box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);
+box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);">
+
+                    </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+
         <!-- /#page-content-wrapper -->
 
     </div>
+</div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -114,6 +173,7 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
     </script>
 
 </body>

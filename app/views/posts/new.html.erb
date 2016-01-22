@@ -48,9 +48,6 @@
                 <li>
                     <a href="/photos/about">About</a>
                 </li>
-                <li>
-                    <a href="/contact/index">Contact</a>
-                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -82,13 +79,6 @@
         <%= f.label :body %><br>
         <%= f.text_area :body,:required => true, :class => 'input_field', :style => "width: 700px", :cols => "30", :rows => "10" %>
     </p>
-    
-    <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: 'form-control'%>
-  </div>
-
-  <%= f.submit 'Upload', class: 'btn btn-primary' %>
 
     <p>
         <%= f.submit :class => "btn btn-default" "Submit Post" %>

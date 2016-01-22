@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #2E2E2E;">
 
     <div id="wrapper">
         <!-- Sidebar -->
@@ -46,44 +46,95 @@
                     <a href="/photos/index">Pictures</a>
                 </li>
                 <li>
+                    <a href="/photos/new">Upload Photo</a>
+                </li>
+                <li>
                     <a href="/photos/about">About</a>
                 </li>
                 <li>
-                    <a href="/contact/index">Contact</a>
-                </li>
+                     <% if user_signed_in? %>
+                         
+                          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'sidebar-brand toggled' %> <span style="font-size: 20px;"></span>
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'sidebar-brand toggled'  %>
+                           <span style="color: darkgray; margin-left: 8%;">Logged in as</span> <strong style="color: lightgray;"><%= current_user.first_name %></strong>
+                        <% else %>
+                          <%= link_to "Sign up", new_user_registration_path, :class => 'sidebar-brand toggled'  %>
+                          <%= link_to "Login", new_user_session_path, :class => 'sidebar-brand toggled'  %>
+
+                        <% end %>
+                    </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                         <button type="button" class="btn btn-default navbar-btn" id="menu-toggle">Menu</button>
-                            <h3 style="float: right; font-size: 25px;">Danny's Memorial</h3>
-                         <hr>
-                         <div class="col-lg-2"></div>
-                         <div class="col-lg-8">
-                      
-                           <span style="font-size: 25px;" id="thingy">Photos</span> 
-                            <hr style="border-color: #17A2FF;">
-                              </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
-                       <div class="page-header"><h1>Upload Photo</h1></div>
+        <div id="page-content-wrapper" style="padding: 0px;">
+           
 
-                                <%= render @photos %>
+
+            <div class="container-fluid" style="padding: 0px;">
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="stuckthing"  style="position: fixed; z-index: 100; width: 100%; background-color: #AAAAAA; border-bottom-style: solid; border-width:1px; border-color: #464646; -webkit-box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);
+-moz-box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);
+box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);">
+                            <div class="col-sm-5" style="margin-left: 7%; margin-top: 1%;">
+                         <button type="button" class="btn btn-primary navbar-btn" id="menu-toggle"style="margin-left: 2%;">Menu</button>
+                     
+
+ </div>
+
+
+ <div class="col-sm-5">
+                        
+                        
+
+
+
+
+                           
+
+                           
+                      
+                            <h3 style=" font-size: 25px; text-align: right; padding-right: 0%;">Danny's Official Memorial</h3>
+                            <hr style="border-color: #17A2FF; width: 64%; margin-right: 0%;">
+                        </div>
+                    </div>
+                         
+                          
+                     </div>
+                    </div>
+                    
+                </div>
+
+                
+</div>
+                <div class="row"> <div class="col-sm-1"></div>
+                         <div class="col-lg-10 text-center">
+                             <div class="text-center" style="margin-top: 15%;"><h3 style="color: white;">Pictures</h3></div>
+                             <hr style="border-color: lightgray;">
+                           
+                          
+                           <% @photos.each do | x | %>
+                           <%= link_to image_tag(x.image.url(:med), class: 'photoshit',), x.image.url, target: '_blank' %>
+                            <% end %>
+                            <br><br>
+                            <hr style="border-color: white;">
+                     
+                            </div>
+                         </div>
                     </div>
                 </div>
+
+
+                
             </div>
         </div>
+
         <!-- /#page-content-wrapper -->
 
     </div>
+</div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -98,9 +149,19 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
     </script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
 
