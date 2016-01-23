@@ -1,5 +1,7 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  rel="stylesheet">
+<title>Danny's Memorial</title>
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  rel="stylesheet">
+<link rel="shortcut icon" href="websiteicon.png">
 <div class="text-center">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
@@ -38,7 +40,7 @@
 <br>
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %></p>
+<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %></p>
 <br>
 <%= link_to "Back", :back %>
 </div>

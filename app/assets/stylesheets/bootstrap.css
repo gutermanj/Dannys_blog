@@ -11,6 +11,11 @@ html {
 }
 body {
   margin: 0;
+  font-family: Arial;
+}
+
+p, div {
+  font-family: courier-new;
 }
 article,
 aside,
@@ -1082,7 +1087,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -1183,7 +1188,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: Arial;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1531,7 +1536,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Arial;
 }
 code {
   padding: 2px 4px;
@@ -5994,7 +5999,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial;
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
@@ -6649,10 +6654,15 @@ button.close {
 
 @media (min-width: 787px) and (max-width: 1200px) {
   .post_wrapper {
+    margin-right: -50%;
   }
 
   .ifiphone {
-    margin-top: 20%;
+    margin-top: 5%;
+  }
+
+  .backphotos {
+    display: none;
   }
 }
 
@@ -6774,9 +6784,10 @@ button.close {
   font-size: 18px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 801px) {
 .post_wrapper {
   margin-left: 5%;
+  margin-right: 5%;
 }
 
 .ifiphone {
@@ -6791,8 +6802,30 @@ button.close {
   z-index: 150;
   display: none;
 }
+
+.backphotos {
+  display: none;
 }
 
+.officialaf {
+  color: white;
+}
+}
+
+.stuckthing {
+  background-image: -webkit-linear-gradient(left, #000000, #383838, #535351, #b2b2b2, #dbdbdb); /* For Chrome and Safari */
+background-image:    -moz-linear-gradient(left, #000000, #383838, #535351, #b2b2b2, #dbdbdb); /* For old Fx (3.6 to 15) */
+background-image:     -ms-linear-gradient(left, #000000, #383838, #535351, #b2b2b2, #dbdbdb); /* For pre-releases of IE 10*/
+background-image:      -o-linear-gradient(left, #000000, #383838, #535351, #b2b2b2, #dbdbdb); /* For old Opera (11.1 to 12.0) */
+background-image:         linear-gradient(to right, #000000, #383838, #535351, #b2b2b2, #dbdbdb); /* Standard syntax; must be last */
+}
+
+.about_content {
+  border-style: solid;
+  border-color: lightgray;
+  border-radius: 3px;
+  border-width: 2px;
+}
 
 
 

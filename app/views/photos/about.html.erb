@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Danny's Memorial</title>
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"  rel="stylesheet">
-
+    <link rel="shortcut icon" href="websiteicon.png">
     <!-- Bootstrap Core CSS -->
     <link href="assets/bootstrap.min.css" rel="stylesheet">
 
@@ -35,7 +35,7 @@
         <div class="toggled" id="sidebar-wrapper">
             <ul class="sidebar-nav toggled">
                 <li class="sidebar-brand toggled">
-                    <a href="/posts">
+                        <a href="/posts">
                         Danny's Memorial
                     </a>
                 </li>
@@ -46,8 +46,23 @@
                     <a href="/photos/index">Pictures</a>
                 </li>
                 <li>
+                    <a href="/photos/new">Upload Photo</a>
+                </li>
+                <li>
                     <a href="/photos/about">About</a>
                 </li>
+                <li>
+                     <% if user_signed_in? %>
+                         
+                          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'sidebar-brand toggled' %> <span style="font-size: 20px;"></span>
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'sidebar-brand toggled'  %>
+                           <span style="color: darkgray; margin-left: 8%;">Logged in as</span> <strong style="color: lightgray;"><%= current_user.first_name %></strong>
+                        <% else %>
+                          <%= link_to "Sign up", new_user_registration_path, :class => 'sidebar-brand toggled'  %>
+                          <%= link_to "Login", new_user_session_path, :class => 'sidebar-brand toggled'  %>
+
+                        <% end %>
+                    </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -63,16 +78,25 @@
                          <div class="col-lg-2"></div>
                          <div class="col-lg-8">
                       
-                           <span style="font-size: 25px;" id="thingy">About Us</span>
-                            <hr style="border-color: #17A2FF;">
-                              </div>
+                            <span style="font-size: 25px;">
+                            About Us
+                            </span>
+                                <hr style="border-color: #17A2FF;">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-2"></div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6 about_content">
                        
-                        <!--Put all about stuff in here-->
+                        <p style="font-size: 18px;" class="text-center">
+                            Thank you for visiting Danny's official memorial website. Our goal is to keep our memories alive.
+                            
+                            Please feel free to upload any pictures and posts you have that contribute to our common interest of honoring his life.
+                            <br><br>
+
+                        </p>
+                            <!--Put all about stuff in here-->
                         
                     </div>
                 </div>
