@@ -117,7 +117,6 @@ box-shadow: 2px 7px 43px -8px rgba(1,36,36,1);">
                           
                            <% @photos.each do | x | %>
                            <%= link_to image_tag(x.image.url(:med), class: 'photoshit',), x.image.url, target: '_blank' %>
-                           <%= link_to 'Delete', x, method: :delete %>
                             <% end %>
                             <br><br>
                             <hr style="border-color: white;">
