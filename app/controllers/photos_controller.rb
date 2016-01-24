@@ -17,6 +17,12 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+  @photos = Photo.find(params[:id])
+  @photos.destroy
+  redirect_to :action => 'index'
+end
+
   private
 
   def photo_params
