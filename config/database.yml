@@ -19,5 +19,3 @@ production:
   encoding: unicode
   database: myapp_pro1
   pool: 5
-  username: lahrei
-  password: 5656
