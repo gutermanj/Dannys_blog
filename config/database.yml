@@ -20,3 +20,5 @@ production:
   database: myapp_pro1
   pool: 5
   port: 5432
+  username: zuqjnujubimicx
+  password: 7otjuiYzbAH5Xqdqw-RZhD6smR
