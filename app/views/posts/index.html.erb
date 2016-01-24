@@ -129,7 +129,6 @@ box-shadow: 2px 7px 59px 4px rgba(0,0,0,1);">
                                 <h4 class="title"><%= link_to f.title, f, {:style=>'color:black; font-size: 25px;'} %></h4>
                                 <p class="date"><i>Posted | <%= f.created_at.strftime("%B, %d, %Y") %></i></p><hr>
                                 <p class="post_body" style="padding-left: 20px; padding-right: 20px;"><%= f.body %></p>
-                                <p><%= link_to 'Destroy', f, :method => :delete, :confirm => "Are you sure?" %></p>
                             </div>
 
                         <% end %>
