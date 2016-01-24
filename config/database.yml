@@ -19,3 +19,4 @@ production:
   encoding: unicode
   database: myapp_pro1
   pool: 5
+  port: 5432
